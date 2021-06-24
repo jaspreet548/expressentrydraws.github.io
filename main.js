@@ -40,25 +40,27 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     $(dom_nodes[0].rows).each(function( index ) {
       if (index!=0){
                 //console.log( index + ": " + $( this ).text() );
-        let tempData= [];
-        $(this.children).each(function( childrenIndex ) {
-          if (childrenIndex!=5){            
+        let tempData= {};
+        $(this.children).each(function( childrenIndex ) {                    
             if (childrenIndex==0){
               let tempDetailUrl = "en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-"+ this.innerText +".html";
-              tempData.push(this.innerText);
+              tempData.drawNo = this.innerText;
+              tempData.details = tempDetailUrl;
             }
             else if(childrenIndex == 1){
-              tempData.push(new Date(this.innerText));
-            }else{
-              tempData.push(this.innerText);
-            }
-          }
+              tempData.date = new Date(this.innerText);
+            }else if(childrenIndex == 2){
+              tempData.immigrationProgram = this.innerText;
+            }else if(childrenIndex == 3){
+              tempData.invitationsIssued = this.innerText;
+            }else if(childrenIndex == 4){
+              tempData.crsScore = this.innerText;
+            }else if(childrenIndex == 6){
+              tempData.programsCovered = this.innerText;
+            }          
         });
         
-        jsonData.draws.push({drawNo=tempData[0], details=tempData[1], date=tempData[2], immigrationProgram=tempData[3],
-          invitationsIssued=tempData[4], crsScore=tempData[5], programsCovered=tempData[6] });
-
-
+        jsonData.draws.push(tempData);
 
       }
     });
