@@ -55,8 +55,8 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
           }
         });
         
-        jsonData.draws.push(drawNo=tempData[0], details=tempData[1], date=tempData[2], immigrationProgram=tempData[3],
-          invitationsIssued=tempData[4], crsScore=tempData[5], programsCovered=tempData[6] );
+        jsonData.draws.push({drawNo=tempData[0], details=tempData[1], date=tempData[2], immigrationProgram=tempData[3],
+          invitationsIssued=tempData[4], crsScore=tempData[5], programsCovered=tempData[6] });
 
 
 
