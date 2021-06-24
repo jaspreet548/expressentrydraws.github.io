@@ -24,18 +24,14 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
           "Federal Skilled Worker (No program specified)",
           "Federal Skilled Trades"
         ],
-        "totalDraws" : [
-        ]
+        "totalDraws" : [0,0,0,0,0]
       },
-      "draws":[
-      ],
-      "years" : [
-        
-      ]
+      "draws":[],
+      "years" : []
     };
 
     var drawTotalCount = dom_nodes[0].rows.length;
-
+    jsonData.totalDraws[0] = drawTotalCount;
 
     $(dom_nodes[0].rows).each(function( index ) {
       if (index!=0){
@@ -43,14 +39,27 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
         let tempData= {};
         $(this.children).each(function( childrenIndex ) {                    
             if (childrenIndex==0){
-              let tempDetailUrl = "en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-"+ this.innerText +".html";
+              let tempDetailUrl = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-"+ this.innerText +".html";
               tempData.drawNo = this.innerText;
               tempData.details = tempDetailUrl;
             }
             else if(childrenIndex == 1){
               tempData.date = new Date(this.innerText);
+              let year = tempData.date.getFullYear();
+              if(!jsonData.years.includes(year)){
+                jsonData.years.push(year);
+              }
             }else if(childrenIndex == 2){
               tempData.immigrationProgram = this.innerText;
+              if(tempData.immigrationProgram == "Canadian Experience Class"){
+                jsonData.totalDraws[1] = jsonData.totalDraws[1] + 1;
+              }else if(tempData.immigrationProgram == "Provincial Nominee Program"){
+                jsonData.totalDraws[2] = jsonData.totalDraws[2] + 1;
+              }else if(tempData.immigrationProgram == "No program specified"){
+                jsonData.totalDraws[3] = jsonData.totalDraws[3] + 1;
+              }else if(tempData.immigrationProgram == "Federal Skilled Trades"){
+                jsonData.totalDraws[4] = jsonData.totalDraws[4] + 1;
+              }
             }else if(childrenIndex == 3){
               tempData.invitationsIssued = this.innerText;
             }else if(childrenIndex == 4){
