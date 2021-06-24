@@ -10,9 +10,10 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     debugger
 
     var startIndexoOfTable = data.indexOf('<table class="wb-tables table"');
-    var lastIndexoOfTable = data.indexOf("</table>")
+    var lastIndexoOfTable = data.indexOf("</table>") + 8;
 
     var table = data.substring(startIndexoOfTable, lastIndexoOfTable);
-    console.log(table);
+    var dom_nodes = $($.parseHTML(table));
+    console.log(dom_nodes);
 
    });
