@@ -7,7 +7,6 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
 
   $.get( "./data.txt" , function( data ) {
    // console.log(data);
-    debugger
 
     var startIndexoOfTable = data.indexOf('<table class="wb-tables table"');
     var lastIndexoOfTable = data.indexOf("</table>") + 8;
