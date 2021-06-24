@@ -29,8 +29,6 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
         ]
       },
       "draws":[
-        {"drawNo": 1, "details":"John", "date":"Doe", "immigrationProgram":"Doe", "invitationsIssued":"", "crsScore":"", "programsCovered": ""},
-        {"details":"John", "date":"Doe", "immigrationProgram":"Doe", "invitationsIssued":"", "crsScore":"", "programsCovered": ""}
       ],
       "years" : [
         
@@ -39,8 +37,32 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
 
     var drawTotalCount = dom_nodes[0].rows.length;
 
-    $(dom_nodes[0].rows).each(function( index ) {
-      console.log( index + ": " + $( this ).text() );
-    });
 
+    $(dom_nodes[0].rows).each(function( index ) {
+      if (index!=0){
+                //console.log( index + ": " + $( this ).text() );
+        let tempData= [];
+        $(this.children).each(function( childrenIndex ) {
+          if (childrenIndex!=5){            
+            if (childrenIndex==0){
+              let tempDetailUrl = "en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-"+ this.innerText +".html";
+              tempData.push(this.innerText);
+            }
+            else if(childrenIndex == 1){
+              tempData.push(new Date(this.innerText));
+            }else{
+              tempData.push(this.innerText);
+            }
+          }
+        });
+        
+        jsonData.draws.push(drawNo=tempData[0], details=tempData[1], date=tempData[2], immigrationProgram=tempData[3],
+          invitationsIssued=tempData[4], crsScore=tempData[5], programsCovered=tempData[6] );
+
+
+
+      }
+    });
+    
+    console.log(jsonData);
    });
