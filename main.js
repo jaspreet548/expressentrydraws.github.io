@@ -52,13 +52,13 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
             }else if(childrenIndex == 2){
               tempData.immigrationProgram = this.innerText;
               if(tempData.immigrationProgram == "Canadian Experience Class"){
-                jsonData.immigrationPrograms.totalDraws[1] = jsonData.totalDraws[1] + 1;
+                jsonData.immigrationPrograms.totalDraws[1] = jsonData.immigrationPrograms.totalDraws[1] + 1;
               }else if(tempData.immigrationProgram == "Provincial Nominee Program"){
-                jsonData.immigrationPrograms.totalDraws[2] = jsonData.totalDraws[2] + 1;
+                jsonData.immigrationPrograms.totalDraws[2] = jsonData.immigrationPrograms.totalDraws[2] + 1;
               }else if(tempData.immigrationProgram == "No program specified"){
-                jsonData.immigrationPrograms.totalDraws[3] = jsonData.totalDraws[3] + 1;
+                jsonData.immigrationPrograms.totalDraws[3] = jsonData.immigrationPrograms.totalDraws[3] + 1;
               }else if(tempData.immigrationProgram == "Federal Skilled Trades"){
-                jsonData.immigrationPrograms.totalDraws[4] = jsonData.totalDraws[4] + 1;
+                jsonData.immigrationPrograms.totalDraws[4] = jsonData.immigrationPrograms.totalDraws[4] + 1;
               }
             }else if(childrenIndex == 3){
               tempData.invitationsIssued = this.innerText;
