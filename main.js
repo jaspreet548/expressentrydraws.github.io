@@ -12,7 +12,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     var startIndexoOfTable = data.indexOf('<table class="wb-tables table"');
     var lastIndexoOfTable = data.indexOf("</table>")
 
-    var table = data.substring(7, 13);
+    var table = data.substring(startIndexoOfTable, lastIndexoOfTable);
     console.log(table);
 
    });
