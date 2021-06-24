@@ -30,7 +30,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
       "years" : []
     };
 
-    var drawTotalCount = dom_nodes[0].rows.length;
+    var drawTotalCount = dom_nodes[0].rows.length - 1;
     jsonData.immigrationPrograms.totalDraws[0] = drawTotalCount;
 
     $(dom_nodes[0].rows).each(function( index ) {
