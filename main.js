@@ -31,7 +31,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     };
 
     var drawTotalCount = dom_nodes[0].rows.length;
-    jsonData.totalDraws[0] = drawTotalCount;
+    jsonData.immigrationPrograms.totalDraws[0] = drawTotalCount;
 
     $(dom_nodes[0].rows).each(function( index ) {
       if (index!=0){
@@ -52,13 +52,13 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
             }else if(childrenIndex == 2){
               tempData.immigrationProgram = this.innerText;
               if(tempData.immigrationProgram == "Canadian Experience Class"){
-                jsonData.totalDraws[1] = jsonData.totalDraws[1] + 1;
+                jsonData.immigrationPrograms.totalDraws[1] = jsonData.totalDraws[1] + 1;
               }else if(tempData.immigrationProgram == "Provincial Nominee Program"){
-                jsonData.totalDraws[2] = jsonData.totalDraws[2] + 1;
+                jsonData.immigrationPrograms.totalDraws[2] = jsonData.totalDraws[2] + 1;
               }else if(tempData.immigrationProgram == "No program specified"){
-                jsonData.totalDraws[3] = jsonData.totalDraws[3] + 1;
+                jsonData.immigrationPrograms.totalDraws[3] = jsonData.totalDraws[3] + 1;
               }else if(tempData.immigrationProgram == "Federal Skilled Trades"){
-                jsonData.totalDraws[4] = jsonData.totalDraws[4] + 1;
+                jsonData.immigrationPrograms.totalDraws[4] = jsonData.totalDraws[4] + 1;
               }
             }else if(childrenIndex == 3){
               tempData.invitationsIssued = this.innerText;
