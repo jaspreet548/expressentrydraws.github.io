@@ -18,11 +18,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     var jsonData = {
       "immigrationPrograms": {
         "types" : [	
-          "All",
-          "Canadian Experience Class",
-          "Provincial Nominee Program",
-          "Federal Skilled Worker (No program specified)",
-          "Federal Skilled Trades"
+          "All"
         ],
         "totalDraws" : [0,0,0,0,0]
       },
@@ -51,15 +47,23 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
               }
             }else if(childrenIndex == 2){
               tempData.immigrationProgram = this.innerText;
-              if(tempData.immigrationProgram == "Canadian Experience Class"){
-                jsonData.immigrationPrograms.totalDraws[1] = jsonData.immigrationPrograms.totalDraws[1] + 1;
-              }else if(tempData.immigrationProgram == "Provincial Nominee Program"){
-                jsonData.immigrationPrograms.totalDraws[2] = jsonData.immigrationPrograms.totalDraws[2] + 1;
-              }else if(tempData.immigrationProgram == "No program specified"){
-                jsonData.immigrationPrograms.totalDraws[3] = jsonData.immigrationPrograms.totalDraws[3] + 1;
-              }else if(tempData.immigrationProgram == "Federal Skilled Trades"){
-                jsonData.immigrationPrograms.totalDraws[4] = jsonData.immigrationPrograms.totalDraws[4] + 1;
+
+              if(!jsonData.immigrationPrograms.types.includes(this.innerText)){
+                jsonData.immigrationPrograms.types.push(this.innerText);
               }
+
+              let typesIndex = jsonData.immigrationPrograms.types.findIndex(element => element == tempData.immigrationProgram);
+              jsonData.immigrationPrograms.totalDraws[typesIndex] = jsonData.immigrationPrograms.totalDraws[typesIndex] + 1;
+
+              // if(tempData.immigrationProgram == "Canadian Experience Class"){
+              //   jsonData.immigrationPrograms.totalDraws[1] = jsonData.immigrationPrograms.totalDraws[1] + 1;
+              // }else if(tempData.immigrationProgram == "Provincial Nominee Program"){
+              //   jsonData.immigrationPrograms.totalDraws[2] = jsonData.immigrationPrograms.totalDraws[2] + 1;
+              // }else if(tempData.immigrationProgram == "No program specified"){
+              //   jsonData.immigrationPrograms.totalDraws[3] = jsonData.immigrationPrograms.totalDraws[3] + 1;
+              // }else if(tempData.immigrationProgram == "Federal Skilled Trades"){
+              //   jsonData.immigrationPrograms.totalDraws[4] = jsonData.immigrationPrograms.totalDraws[4] + 1;
+              // }
             }else if(childrenIndex == 3){
               tempData.invitationsIssued = this.innerText;
             }else if(childrenIndex == 4){
