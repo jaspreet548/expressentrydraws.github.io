@@ -69,6 +69,13 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
 
       }
     });
+
+    $.each(jsonData.years, function (i, item) {
+      $('#ddlYears').append($('<option>', { 
+          value: item.value,
+          text : item.value 
+      }));
+    });
     
     console.log(jsonData);
    });
