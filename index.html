@@ -22,17 +22,36 @@
       <li><strong>CRS score of lowest-ranked candidate invited</strong></li>
     </ul>
   </details>
-<br><br><br>
+<br><br>
+<button id="btnUpdate" >Update</button>
+<br>
 
 <label for="Years">Choose a year:</label>
 
 <select name="Years" id="ddlYears">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
+  <option value="all">All</option>
 </select> 
 
+<select name="Category" id="ddlCategory">
+</select> 
+<br>
+<br>
+<p>First Draw : <span id="spnFirstDraw"></span></p> 
+<p>First Draw this year: <span id="spnFirstDrawTY"></span></p> 
+<p>Last Draw this year: <span id="spnLastDrawTY"></span></p> 
+<p>First Draw last year: <span id="spnFirstDrawLY"></span></p> 
+<p>Last Draw last year: <span id="spnLastDrawLY"></span></p> 
+
+<p>Total Draws (All) : <span id="spnTotalDraws"></span></p> 
+<p>Total Draws (Category Wise) : <span id="spnTDCategory"></span></p> 
+<p>Total Draws (Year Wise) : <span id="spnTDYear"></span></p> 
+
+
+<div id="divLast5Draws">Last 5 draws - 
+</div>
+
+<div id="divLast5DrawsCategory">Last 5 draws (Category Wise) - 
+</div>
 
 </body>
 </html>
