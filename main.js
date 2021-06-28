@@ -1,5 +1,15 @@
 var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html";
 
+var jsonData = {
+  "immigrationPrograms": {
+    "types" : [	
+    ],
+    "totalDraws" : []
+  },
+  "draws":[],
+  "years" : []
+};
+
 // $.get( url , function( data ) {
 //    console.log(data);
 //    debugger
@@ -13,17 +23,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
 
     var table = data.substring(startIndexoOfTable, lastIndexoOfTable);
     var dom_nodes = $($.parseHTML(table));
-    console.log(dom_nodes);
-
-    var jsonData = {
-      "immigrationPrograms": {
-        "types" : [	
-        ],
-        "totalDraws" : []
-      },
-      "draws":[],
-      "years" : []
-    };
+    console.log(dom_nodes);    
 
     $(dom_nodes[0].rows).each(function( index ) {
       if (index!=0){
@@ -103,12 +103,34 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     $('#spnTotalDraws').text(drawTotalCount);
 
     $("#ddlYears").change(function () {
-      alert($(this).val());
+      var year = $(this).val();
+      var categoryVal = $("#ddlCategory").val();
+      sortData(year, categoryVal);
+
     });
 
     $("#ddlCategory").change(function () {
-      alert($(this).val());
+      var year = $("#ddlYears").val();
+      var categoryVal = $(this).val();
+      sortData(year, categoryVal);
   });
 
     console.log(jsonData);
    });
+
+   function sortData(year, categoryVal){
+    var drawsLength = 0;
+      if(categoryVal !=0 && year !=0){
+        var draws = jsonData.draws.filter(draw => (new Date(draw.date).year) == year && (draw.immigrationProgram) == categoryVal);
+        drawsLength = draws.length;
+      } else if(categoryVal ==0 && year ==0){
+        drawsLength = jsonData.immigrationProgram.totalDraws;
+      }else if(categoryVal ==0 && year !=0){
+        var draws = jsonData.draws.filter(draw => (new Date(draw.date).year) == year);
+        drawsLength = draws.length;
+      } else if(categoryVal !=0 && year ==0){
+        var draws = jsonData.draws.filter(draw => (draw.immigrationProgram) == categoryVal);
+        drawsLength = draws.length;
+      }
+      $("#spnTDFilter").text(drawsLength);
+   }
