@@ -7,7 +7,8 @@ var jsonData = {
     "totalDraws" : []
   },
   "draws":[],
-  "years" : []
+  "years" : [],
+  "nominationsIssued" : 0
 };
 
 // $.get( url , function( data ) {
@@ -27,7 +28,6 @@ var jsonData = {
 
     $(dom_nodes[0].rows).each(function( index ) {
       if (index!=0){
-                //console.log( index + ": " + $( this ).text() );
         let tempData= {};
         $(this.children).each(function( childrenIndex ) {                    
             if (childrenIndex==0){
@@ -53,7 +53,7 @@ var jsonData = {
               jsonData.immigrationPrograms.totalDraws[typesIndex] = jsonData.immigrationPrograms.totalDraws[typesIndex] + 1;
 
             }else if(childrenIndex == 3){
-              tempData.invitationsIssued = this.innerText;
+              tempData.invitationsIssued = this.innerText;            
             }else if(childrenIndex == 4){
               tempData.crsScore = this.innerText;
             }else if(childrenIndex == 6){
@@ -62,6 +62,7 @@ var jsonData = {
         });
         
         jsonData.draws.unshift(tempData);
+        jsonData.nominationsIssued += tempData.nominationsIssued;
 
       }
     });
@@ -121,17 +122,29 @@ var jsonData = {
 
    function sortData(year, categoryVal){
     var drawsLength = 0;
+    var draws = [];
       if(categoryVal !=0 && year !=0){
-        var draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year && (draw.immigrationProgram) == categoryVal);
+        draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year && (draw.immigrationProgram) == categoryVal);
         drawsLength = draws.length;
       } else if(categoryVal ==0 && year ==0){
         drawsLength = jsonData.immigrationPrograms.totalDraws[0];
       }else if(categoryVal ==0 && year !=0){
-        var draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year);
+        draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year);
         drawsLength = draws.length;
       } else if(categoryVal !=0 && year ==0){
-        var draws = jsonData.draws.filter(draw => (draw.immigrationProgram) == categoryVal);
+        draws = jsonData.draws.filter(draw => (draw.immigrationProgram) == categoryVal);
         drawsLength = draws.length;
       }
       $("#spnTDFilter").text(drawsLength);
+
+      if(categoryVal ==0 && year ==0){
+        $("#spnNFilter").text(jsonData.nominationsIssued);
+      }else{
+        var nominationsIssuedTemp = 0;
+        $.each(draws, function (i, item) {
+          nominationsIssuedTemp += item.nominationsIssued;
+        });
+        $("#spnNFilter").text(nominationsIssuedTemp);
+      }
+
    }
