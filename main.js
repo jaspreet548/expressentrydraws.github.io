@@ -115,7 +115,23 @@ var jsonData = {
       var year = $("#ddlYears").val();
       var categoryVal = $(this).val();
       sortData(year, categoryVal);
-  });
+    });
+
+    $("#spnNFilter").text(jsonData.invitationsIssued);
+
+    var last5Draws = jsonData.draws.slice(-5);
+    $.each(last5Draws, function (i, item) {
+      invitationsIssuedTemp += parseInt(item.invitationsIssued);
+      var tableTr = "<tr><td>" + item.drawNo+ "/td>" + 
+      "<td>" + item.data + "</td>" +
+      "<td>" + item.immigrationProgram + "</td>" +
+      "<td>" + item.crsScore + "</td>" +
+      "<td>" + item.invitationsIssued + "</td>" +
+      "<td>" + item.programsCovered + "</td>" +
+      "</tr>";
+
+      $('#tblLast5Draws').append(tableTr);
+    });
 
     console.log(jsonData);
    });
@@ -136,15 +152,25 @@ var jsonData = {
         drawsLength = draws.length;
       }
       $("#spnTDFilter").text(drawsLength);
+      
+      var invitationsIssuedTemp = 0;
+      $.each(draws, function (i, item) {
+        invitationsIssuedTemp += parseInt(item.invitationsIssued);
+        var tableTr = "<tr><td>" + item.drawNo+ "/td>" + 
+        "<td>" + item.data + "</td>" +
+        "<td>" + item.immigrationProgram + "</td>" +
+        "<td>" + item.crsScore + "</td>" +
+        "<td>" + item.invitationsIssued + "</td>" +
+        "<td>" + item.programsCovered + "</td>" +
+        "</tr>";
+
+        $('#tblDrawsCategory').append(tableTr);
+      });
 
       if(categoryVal ==0 && year ==0){
         $("#spnNFilter").text(jsonData.invitationsIssued);
       }else{
-        var invitationsIssuedTemp = 0;
-        $.each(draws, function (i, item) {
-          invitationsIssuedTemp += parseInt(item.invitationsIssued);
-        });
         $("#spnNFilter").text(invitationsIssuedTemp);
-      }
+      }    
 
    }
