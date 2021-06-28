@@ -152,6 +152,7 @@ var jsonData = {
       }
       $("#spnTDFilter").text(drawsLength);
       
+      $("#tblDrawsCategory tbody").empty();
       var invitationsIssuedTemp = 0;
       $.each(draws, function (i, item) {
         invitationsIssuedTemp += parseInt(item.invitationsIssued);
@@ -163,7 +164,7 @@ var jsonData = {
         "<td>" + item.programsCovered + "</td>" +
         "</tr>";
 
-        $('#tblDrawsCategory').append(tableTr);
+        $('#tblDrawsCategory tbody').append(tableTr);
       });
 
       if(categoryVal ==0 && year ==0){
