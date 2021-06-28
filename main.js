@@ -8,7 +8,7 @@ var jsonData = {
   },
   "draws":[],
   "years" : [],
-  "nominationsIssued" : 0
+  "invitationsIssued" : 0
 };
 
 // $.get( url , function( data ) {
@@ -62,7 +62,7 @@ var jsonData = {
         });
         
         jsonData.draws.unshift(tempData);
-        jsonData.nominationsIssued += tempData.nominationsIssued;
+        jsonData.invitationsIssued += parseInt(tempData.invitationsIssued);
 
       }
     });
@@ -138,13 +138,13 @@ var jsonData = {
       $("#spnTDFilter").text(drawsLength);
 
       if(categoryVal ==0 && year ==0){
-        $("#spnNFilter").text(jsonData.nominationsIssued);
+        $("#spnNFilter").text(jsonData.invitationsIssued);
       }else{
-        var nominationsIssuedTemp = 0;
+        var invitationsIssuedTemp = 0;
         $.each(draws, function (i, item) {
-          nominationsIssuedTemp += item.nominationsIssued;
+          invitationsIssuedTemp += parseInt(item.invitationsIssued);
         });
-        $("#spnNFilter").text(nominationsIssuedTemp);
+        $("#spnNFilter").text(invitationsIssuedTemp);
       }
 
    }
