@@ -11,10 +11,7 @@ var jsonData = {
   "invitationsIssued" : 0
 };
 
-// $.get( url , function( data ) {
-//    console.log(data);
-//    debugger
-//   });
+
 
   $.get( "./data.txt" , function( data ) {
    // console.log(data);
@@ -152,8 +149,16 @@ var jsonData = {
       
       $("#tblDrawsCategory tbody").empty();
       var invitationsIssuedTemp = 0;
+      var maxCRSTemp = 0;
+      var minCRSTemp = 0;
+      var avgCRSTemp = 0;
       $.each(draws, function (i, item) {
+
         invitationsIssuedTemp += parseInt(item.invitationsIssued);
+        maxCRSTemp =  maxCRSTemp < parseInt(item.crsScore) ? parseInt(item.crsScore) : maxCRSTemp;
+        minCRSTemp = minCRSTemp > parseInt(item.crsScore) ? parseInt(item.crsScore) : minCRSTemp;
+        avgCRSTemp += parseInt(item.crsScore);
+
         var tableTr = "<tr><td>" + item.drawNo+ "</td>" + 
         "<td>" + item.date + "</td>" +
         "<td>" + item.immigrationProgram + "</td>" +
@@ -171,4 +176,18 @@ var jsonData = {
         $("#spnNFilter").text(invitationsIssuedTemp);
       }    
 
+      $("#spnMiniCrsFilter").text(minCRSTemp);
+      $("#spnMaxCrsFilter").text(maxCRSTemp);
+      $("#spnAvgCrsFilter").text(avgCRSTemp/drawsLength);
+
    }
+
+   $("#btnUpdate").click(function(){
+    $.get( url , function( data ) {
+      console.log(data);
+      // using (System.IO.StreamWriter file = new System.IO.StreamWriter("C:\Users\Public\TestFolder\WriteLines2.txt", true))
+      // {
+      //     file.WriteLine(text);
+      // }
+    });
+  }); 
