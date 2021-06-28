@@ -121,7 +121,6 @@ var jsonData = {
 
     var last5Draws = jsonData.draws.slice(-5);
     $.each(last5Draws, function (i, item) {
-      invitationsIssuedTemp += parseInt(item.invitationsIssued);
       var tableTr = "<tr><td>" + item.drawNo+ "/td>" + 
       "<td>" + item.data + "</td>" +
       "<td>" + item.immigrationProgram + "</td>" +
