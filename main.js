@@ -125,7 +125,7 @@ var jsonData = {
         var draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year && (draw.immigrationProgram) == categoryVal);
         drawsLength = draws.length;
       } else if(categoryVal ==0 && year ==0){
-        drawsLength = jsonData.immigrationProgram.totalDraws;
+        drawsLength = jsonData.immigrationPrograms.totalDraws[0];
       }else if(categoryVal ==0 && year !=0){
         var draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year);
         drawsLength = draws.length;
