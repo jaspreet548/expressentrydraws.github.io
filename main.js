@@ -18,16 +18,12 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     var jsonData = {
       "immigrationPrograms": {
         "types" : [	
-          "All"
         ],
         "totalDraws" : []
       },
       "draws":[],
       "years" : []
     };
-
-    var drawTotalCount = dom_nodes[0].rows.length - 1;
-    jsonData.immigrationPrograms.totalDraws[0] = drawTotalCount;
 
     $(dom_nodes[0].rows).each(function( index ) {
       if (index!=0){
@@ -79,7 +75,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
 
     $.each(jsonData.immigrationPrograms.types, function (i, item) {
       $('#ddlCategory').append($('<option>', { 
-          value: i,
+          value: item,
           text : item 
       }));
     });
@@ -102,7 +98,17 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     $('#spnFirstDrawLY').text(firstDrawLY);
     $('#spnLastDrawLY').text(lastDrawLY);
 
-    $('#spnTotalDraws').text(jsonData.draws- 1);
+    var drawTotalCount = jsonData.draws[jsonData.length -1].drawNo;
+    jsonData.immigrationPrograms.totalDraws[0] = drawTotalCount;    
+    $('#spnTotalDraws').text(drawTotalCount);
+
+    $("#ddlYears").change(function () {
+      alert($(this).val());
+    });
+
+    $("#Category").change(function () {
+      alert($(this).val());
+  });
 
     console.log(jsonData);
    });
