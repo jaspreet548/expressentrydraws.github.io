@@ -85,7 +85,12 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     });
 
     var firstDrawVal = jsonData.draws[0].immigrationProgram + ", Crs : " + jsonData.draws[0].crsScore +", Date - " + jsonData.draws[0].date;
-    $('#spnFirstDraw').val(firstDrawVal);
+    $('#spnFirstDraw').text(firstDrawVal);
+
+    var dateThisYear = new Date(new Date().getFullYear(), 0, 1);
+    var thisYearFirstDraw = jsonData.draws.filter(draw => (new Date(draw.date)) >= dateThisYear);
+    var firstDrawTY = jsonData.draws[0].immigrationProgram + ", Crs : " + jsonData.draws[0].crsScore +", Date - " + jsonData.draws[0].date;
+    $('#spnFirstDrawTY').text(firstDrawTY);
     
     console.log(jsonData);
    });
