@@ -61,7 +61,7 @@ var jsonData = {
             }          
         });
         
-        jsonData.draws.unshift(tempData);
+        jsonData.draws.push(tempData);
         jsonData.invitationsIssued += parseInt(tempData.invitationsIssued);
 
       }
@@ -81,7 +81,7 @@ var jsonData = {
       }));
     });
 
-    var firstDrawVal = jsonData.draws[0].immigrationProgram + ", Crs : " + jsonData.draws[0].crsScore +", Date - " + jsonData.draws[0].date;
+    var firstDrawVal = jsonData.draws[jsonData.draws.length-1].immigrationProgram + ", Crs : " + jsonData.draws[jsonData.draws.length-1].crsScore +", Date - " + jsonData.draws[jsonData.draws.length-1].date;
     $('#spnFirstDraw').text(firstDrawVal);
 
     var dateThisYear = new Date(new Date().getFullYear(), 0, 1);
@@ -99,7 +99,7 @@ var jsonData = {
     $('#spnFirstDrawLY').text(firstDrawLY);
     $('#spnLastDrawLY').text(lastDrawLY);
 
-    var drawTotalCount = jsonData.draws[jsonData.draws.length -1].drawNo;
+    var drawTotalCount = jsonData.draws[0].drawNo;
     jsonData.immigrationPrograms.totalDraws[0] = drawTotalCount;    
     $('#spnTotalDraws').text(drawTotalCount);
     $("#spnTDFilter").text(drawTotalCount);
