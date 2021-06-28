@@ -150,7 +150,7 @@ var jsonData = {
       $("#tblDrawsCategory tbody").empty();
       var invitationsIssuedTemp = 0;
       var maxCRSTemp = 0;
-      var minCRSTemp = 0;
+      var minCRSTemp = 1000;
       var avgCRSTemp = 0;
       $.each(draws, function (i, item) {
 
