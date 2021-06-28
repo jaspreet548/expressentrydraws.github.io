@@ -101,7 +101,8 @@ var jsonData = {
     var drawTotalCount = jsonData.draws[jsonData.draws.length -1].drawNo;
     jsonData.immigrationPrograms.totalDraws[0] = drawTotalCount;    
     $('#spnTotalDraws').text(drawTotalCount);
-
+    $("#spnTDFilter").text(drawTotalCount);
+     
     $("#ddlYears").change(function () {
       var year = $(this).val();
       var categoryVal = $("#ddlCategory").val();
@@ -121,12 +122,12 @@ var jsonData = {
    function sortData(year, categoryVal){
     var drawsLength = 0;
       if(categoryVal !=0 && year !=0){
-        var draws = jsonData.draws.filter(draw => (new Date(draw.date).year) == year && (draw.immigrationProgram) == categoryVal);
+        var draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year && (draw.immigrationProgram) == categoryVal);
         drawsLength = draws.length;
       } else if(categoryVal ==0 && year ==0){
         drawsLength = jsonData.immigrationProgram.totalDraws;
       }else if(categoryVal ==0 && year !=0){
-        var draws = jsonData.draws.filter(draw => (new Date(draw.date).year) == year);
+        var draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year);
         drawsLength = draws.length;
       } else if(categoryVal !=0 && year ==0){
         var draws = jsonData.draws.filter(draw => (draw.immigrationProgram) == categoryVal);
