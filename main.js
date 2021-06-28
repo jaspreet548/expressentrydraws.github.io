@@ -121,8 +121,8 @@ var jsonData = {
 
     var last5Draws = jsonData.draws.slice(-5);
     $.each(last5Draws, function (i, item) {
-      var tableTr = "<tr><td>" + item.drawNo+ "/td>" + 
-      "<td>" + item.data + "</td>" +
+      var tableTr = "<tr><td>" + item.drawNo+ "</td>" + 
+      "<td>" + item.date + "</td>" +
       "<td>" + item.immigrationProgram + "</td>" +
       "<td>" + item.crsScore + "</td>" +
       "<td>" + item.invitationsIssued + "</td>" +
@@ -155,8 +155,8 @@ var jsonData = {
       var invitationsIssuedTemp = 0;
       $.each(draws, function (i, item) {
         invitationsIssuedTemp += parseInt(item.invitationsIssued);
-        var tableTr = "<tr><td>" + item.drawNo+ "/td>" + 
-        "<td>" + item.data + "</td>" +
+        var tableTr = "<tr><td>" + item.drawNo+ "</td>" + 
+        "<td>" + item.date + "</td>" +
         "<td>" + item.immigrationProgram + "</td>" +
         "<td>" + item.crsScore + "</td>" +
         "<td>" + item.invitationsIssued + "</td>" +
