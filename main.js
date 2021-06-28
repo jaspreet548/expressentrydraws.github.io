@@ -140,16 +140,14 @@ var jsonData = {
     var draws = [];
       if(categoryVal !=0 && year !=0){
         draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year && (draw.immigrationProgram) == categoryVal);
-        drawsLength = draws.length;
       } else if(categoryVal ==0 && year ==0){
-        drawsLength = jsonData.immigrationPrograms.totalDraws[0];
+        draws = jsonData.draws;
       }else if(categoryVal ==0 && year !=0){
         draws = jsonData.draws.filter(draw => (new Date(draw.date)).getFullYear() == year);
-        drawsLength = draws.length;
       } else if(categoryVal !=0 && year ==0){
-        draws = jsonData.draws.filter(draw => (draw.immigrationProgram) == categoryVal);
-        drawsLength = draws.length;
+        draws = jsonData.draws.filter(draw => (draw.immigrationProgram) == categoryVal);        
       }
+      drawsLength = draws.length;
       $("#spnTDFilter").text(drawsLength);
       
       $("#tblDrawsCategory tbody").empty();
