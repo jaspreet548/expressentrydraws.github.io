@@ -98,7 +98,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     $('#spnFirstDrawLY').text(firstDrawLY);
     $('#spnLastDrawLY').text(lastDrawLY);
 
-    var drawTotalCount = jsonData.draws[jsonData.length -1].drawNo;
+    var drawTotalCount = jsonData.draws[jsonData.draws.length -1].drawNo;
     jsonData.immigrationPrograms.totalDraws[0] = drawTotalCount;    
     $('#spnTotalDraws').text(drawTotalCount);
 
@@ -106,7 +106,7 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
       alert($(this).val());
     });
 
-    $("#Category").change(function () {
+    $("#ddlCategory").change(function () {
       alert($(this).val());
   });
 
