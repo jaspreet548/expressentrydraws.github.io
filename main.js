@@ -95,12 +95,14 @@ var url = "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/m
     $('#spnLastDrawTY').text(lastDrawTY);
     
     var dateLastYearFirstMonth = new Date(new Date().getFullYear() -1 , 0, 1);
-    var dateLastYearLastMonth = new Date(new Date().getFullYear() -1 , 12, 31);
+    var dateLastYearLastMonth = new Date(new Date().getFullYear() -1 , 11, 31);
     var lastYearDraws = jsonData.draws.filter(draw => (new Date(draw.date)) >= dateLastYearFirstMonth && (new Date(draw.date)) <= dateLastYearLastMonth);
     var firstDrawLY = lastYearDraws[0].immigrationProgram + ", Crs : " + lastYearDraws[0].crsScore +", Date - " + lastYearDraws[0].date;
     var lastDrawLY = lastYearDraws[lastYearDraws.length -1].immigrationProgram + ", Crs : " + lastYearDraws[lastYearDraws.length -1].crsScore +", Date - " + lastYearDraws[lastYearDraws.length -1].date;
     $('#spnFirstDrawLY').text(firstDrawLY);
     $('#spnLastDrawLY').text(lastDrawLY);
+
+    $('#spnTotalDraws').text(jsonData.draws- 1);
 
     console.log(jsonData);
    });
