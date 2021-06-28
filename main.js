@@ -119,7 +119,7 @@ var jsonData = {
 
     $("#spnNFilter").text(jsonData.invitationsIssued);
 
-    var last5Draws = jsonData.draws.slice(-5);
+    var last5Draws = jsonData.draws.slice(0,5);
     $.each(last5Draws, function (i, item) {
       var tableTr = "<tr><td>" + item.drawNo+ "</td>" + 
       "<td>" + item.date + "</td>" +
