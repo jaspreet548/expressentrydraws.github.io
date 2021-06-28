@@ -153,7 +153,6 @@ var jsonData = {
       var minCRSTemp = 1000;
       var avgCRSTemp = 0;
       $.each(draws, function (i, item) {
-
         invitationsIssuedTemp += parseInt(item.invitationsIssued);
         maxCRSTemp =  maxCRSTemp < parseInt(item.crsScore) ? parseInt(item.crsScore) : maxCRSTemp;
         minCRSTemp = minCRSTemp > parseInt(item.crsScore) ? parseInt(item.crsScore) : minCRSTemp;
@@ -175,6 +174,10 @@ var jsonData = {
       }else{
         $("#spnNFilter").text(invitationsIssuedTemp);
       }    
+
+      if(draws.length == 0){
+        minCRSTemp = 0;
+      }
 
       $("#spnMiniCrsFilter").text(minCRSTemp);
       $("#spnMaxCrsFilter").text(maxCRSTemp);
