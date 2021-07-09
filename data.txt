@@ -36,7 +36,7 @@
 		<meta name="dcterms.issued" title="W3CDTF" content="2021-02-09"/>
 	
 	
-		<meta name="dcterms.modified" title="W3CDTF" content="2021-06-24"/>
+		<meta name="dcterms.modified" title="W3CDTF" content="2021-07-08"/>
 	
 	
 	
@@ -64,7 +64,6 @@
     
 
 
-
 	<script src="//assets.adobedtm.com/be5dfd287373/abb618326704/launch-3eac5e076135.min.js"></script>
 
 
@@ -86,7 +85,7 @@
 
 
 
-                          <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="m7jtpzyxblvy2ygzgh5a-f-d733652d0-clientnsv4-s.akamaihd.net",i={"ak.v":"31","ak.cp":"368225","ak.ai":parseInt("231651",10),"ak.ol":"0","ak.cr":9,"ak.ipv":4,"ak.proto":"h2","ak.rid":"27f3e17f","ak.r":15849,"ak.a2":e,"ak.m":"dscb","ak.n":"essl","ak.bpcip":"103.211.55.0","ak.cport":55034,"ak.gh":"23.57.74.81","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1624846842","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==Lq3zY/2PWmd+EGNqPgzcR0uonm6qL8+Fu+lcJpxA+J7dake54oPWefXWJVgu9IGplG7WDyso2SkrC/ZJ6FPEyvlNDQilMb/FWBYL+QuJRuz5w7/1j/o7EjFVfMc6Nrh/aXtuOGiBpfFRcTiJmJM5rfogoQjXVKd8pwskFkipktiDB6VudDhrMvY7hHOwqenBDhHRs3NXHo3HtSbU7N1yuXHlPau9zT3JEz/zyqly2dfbbPxMnLW3OxGbfyf5tPLTb4pCUKMf8RkM6jFHQU1XuJH9ZdiTXecfGe+0cIUQs08jyZchJ3zuiaU0vo/fHH7waTOWHTR9c8TtNl2j0fFlBF+uLnzdM/LUWqQGiMLMAmQzl8JFQsLTLPEvvh0kLiIpIriXd4QJcfLVQ4fil0S7/ornkFKynkIkKmSaScd5vDQ=","ak.pv":"612","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var _={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!_.i){var a=BOOMR.subscribe;a("before_beacon",_.av,null,null),a("onbeacon",_.rv,null,null),_.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+                          <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="m7jtp3ixblvy2yhhufka-f-01da8bae3-clientnsv4-s.akamaihd.net",i={"ak.v":"31","ak.cp":"368225","ak.ai":parseInt("231651",10),"ak.ol":"0","ak.cr":5,"ak.ipv":4,"ak.proto":"h2","ak.rid":"492d85a2","ak.r":15849,"ak.a2":e,"ak.m":"dscb","ak.n":"essl","ak.bpcip":"103.211.55.0","ak.cport":59860,"ak.gh":"23.15.33.44","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1625792852","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==Yue0fMVyN/2eaoiQ1qQQUUGfP3XuM31spMUurxKoPg6gtPeFBwSxAcjPMllPl10UYAP/HPttdXbFOPLtiHoW+UZE4Yo7Dj2Gnt3bjmKeZ4Y/szxEC6AyiakAIpg56jeFaPR+948O928Yrl6COCEhwAnP3Awc4d/CYcs1YoIWfxKNH8HyBp84CWSHIr8dyz4qesiBWWbjWoGWlfNZvPdzZxiCwtpBgBgJ3HwePYQaTCgsfrgCtPW0+KvH3adTQmGMh5IdLpO2cQ0BcbWLfFTw0m/9XPo6K/kUkvJzC3RkGPW/EC93EALEgCJpuolt77pwMFWPgtJuuxTcY7bzKdTFJ01BOvKDw2NzloA6kUjLveHYOZ29qT4TThSIcnyj6JYLOdeyMccRe1G+QhRkr6+E6nS7cOdQEVZhcN9CsxOoAiw=","ak.pv":"612","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var _={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!_.i){var a=BOOMR.subscribe;a("before_beacon",_.av,null,null),a("onbeacon",_.rv,null,null),_.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
 
 <body vocab="http://schema.org/" typeof="WebPage" resource="#wb-webpage">
 
@@ -310,8 +309,28 @@ Ministerial Instructions respecting invitations to apply for permanent residence
       </tr>
     </thead>
     <tbody>
-      <tr>
+<tr>
+        <td><a href="/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-196.html">196</a></td>
+  <td class="nowrap">July 8, 2021</td>
+        <td>Canadian Experience Class</td>
+        <td>4500</td>
+        <td>369</td>
+        <td>08-07-2021</td>
+        <td><p>Canadian Experience Class</p></td>
+      </tr>
 
+
+      <tr>
+        <td><a href="/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-195.html">195</a></td>
+  <td class="nowrap">July 7, 2021</td>
+        <td>Provincial Nominee Program</td>
+        <td>627</td>
+        <td>760</td>
+        <td>07-07-2021</td>
+        <td><p>Provincial Nominee Program</p></td>
+      </tr>
+
+      <tr>
         <td><a href="/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-194.html">194</a></td>
   <td class="nowrap">June 24, 2021</td>
         <td>Canadian Experience Class</td>
@@ -320,7 +339,8 @@ Ministerial Instructions respecting invitations to apply for permanent residence
         <td>24-06-2021</td>
         <td><p>Canadian Experience Class</p></td>
       </tr>
-        <tr><td><a href="/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-193.html">193</a></td>
+      <tr>
+        <td><a href="/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds/invitations-193.html">193</a></td>
         <td class="nowrap">June 23, 2021</td>
         <td>Provincial Nominee Program</td>
         <td>1002</td>
@@ -2588,7 +2608,7 @@ Ministerial Instructions respecting invitations to apply for permanent residence
 </div>
         <dl id="wb-dtmd">
     <dt>Date modified:</dt>
-    <dd><time property="dateModified">2021-06-24</time></dd>
+    <dd><time property="dateModified">2021-07-08</time></dd>
 </dl>
 </div>
         </main>
@@ -2788,6 +2808,7 @@ Ministerial Instructions respecting invitations to apply for permanent residence
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
 <script src="/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+
 
 
 </body>
